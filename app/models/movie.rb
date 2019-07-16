@@ -14,4 +14,14 @@
 
 class Movie < ApplicationRecord
   belongs_to :genre
+
+  def external_info
+    @external_info ||= pairguru_api.movie_info(title)
+  end
+
+  private
+
+  def pairguru_api
+    @pairguru_api ||= ::PairguruApi.new
+  end
 end
