@@ -17,6 +17,9 @@ class Movie < ApplicationRecord
     attributes :id, :title, :description, :genre
   end
 
+  include ActiveModel::Validations
+  validates_with ::TitleBracketsValidator
+
   belongs_to :genre
 
   def external_info
