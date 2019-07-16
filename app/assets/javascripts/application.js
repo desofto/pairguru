@@ -13,3 +13,22 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require apiql
+
+APIQL.endpoint = "/apiql"
+
+document.addEventListener("DOMContentLoaded", function() {
+  apiql(`
+    movies {
+      id title
+
+      genre {
+        name
+      }
+    }
+  `)
+  .then(response => {
+    console.log(response)
+  })
+}, false)
+

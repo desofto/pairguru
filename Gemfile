@@ -14,6 +14,8 @@ gem "uglifier"
 
 gem 'redis', '~> 3.0'
 
+gem 'apiql', git: 'https://github.com/desofto/apiql.git'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.1.0", require: false
 

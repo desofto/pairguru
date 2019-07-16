@@ -9,5 +9,9 @@
 #
 
 class Genre < ApplicationRecord
+  class Entity < BaseEntity
+    attributes :id, :name, :movies
+  end
+
   has_many :movies
 end

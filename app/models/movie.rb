@@ -13,6 +13,10 @@
 #
 
 class Movie < ApplicationRecord
+  class Entity < BaseEntity
+    attributes :id, :title, :description, :genre
+  end
+
   belongs_to :genre
 
   def external_info
