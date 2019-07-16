@@ -1,5 +1,12 @@
 %h1= @movie.title
+
+%img.img-rounded{ src: @movie.cover }
+
 .jumbotron
   = @movie.description
+
+.jumbotron
+  = @movie.external_info&.dig('attributes', 'plot')
+
 - if user_signed_in?
   %p= link_to 'Email me details about this movie', send_info_movie_path(@movie), class: 'btn btn-sm btn-default'

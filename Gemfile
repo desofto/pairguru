@@ -12,6 +12,11 @@ gem "sass-rails"
 gem "sqlite3"
 gem "uglifier"
 
+gem 'redis', '~> 3.0'
+
+gem 'apiql', git: 'https://github.com/desofto/apiql.git'
+gem 'sidekiq'
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", ">= 1.1.0", require: false
 

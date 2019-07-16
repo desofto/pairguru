@@ -13,5 +13,22 @@
 #
 
 class Movie < ApplicationRecord
+  class Entity < BaseEntity
+    attributes :id, :title, :description, :genre
+  end
+
+  include ActiveModel::Validations
+  validates_with ::TitleBracketsValidator
+
   belongs_to :genre
+
+  def external_info
+    @external_info ||= pairguru_api.movie_info(title)
+  end
+
+  private
+
+  def pairguru_api
+    @pairguru_api ||= ::PairguruApi.new
+  end
 end
