@@ -1,0 +1,10 @@
+:verbose: true
+:logfile: log/sidekiq.log
+:concurrency:  1
+:strict: false
+:pidfile: tmp/pids/sidekiq.pid
+:queues:
+  - [cable, 4]
+  - [mailers, 2]
+  - [default, 1]
+  - [paperclip, 1]
